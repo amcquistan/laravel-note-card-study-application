@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>{{ $subject->name }}</h1>
+
 <div class='container'>
+    <div class='row'>
+        <div class='col-md-8'><h1>{{ $subject->name }}</h1></div>
+        <div class='col-md-offset-2 col-md-2'><a class='btn btn-default' href='{{ url('/notecard/' . $noteCard->id . '/next') }}'>Next <i class="fa fa-hand-o-right" aria-hidden="true"></i></a></div>
+    </div>
+    
     <div class='col-sm-offset-2 col-sm-8'>
         <div>            
             <input type='hidden' name='subject_id' value='{{ $subject->id }}' />

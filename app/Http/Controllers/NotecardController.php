@@ -67,6 +67,26 @@ class NotecardController extends Controller
         ]);
     }
     
+    public function next(Request $request, $id) {
+        $noteCard = Notecard::find($id);
+        $nextCard = Notecard::where([
+                                ['id', '>', $id],
+                                ['user_id', '=', $request->user()->id],
+                                ['subject_id', '=', $noteCard->subject_id]])
+                        ->orderBy('id')
+                        ->first();
+        
+        
+        if (empty($nextCard)) {
+            return redirect('/subject/'. $noteCard->subject_id .'/notecards');
+        }
+        
+        return view('notecards.show', [
+            'noteCard' => $nextCard,
+            'subject' => Subject::find($noteCard->subject_id)
+        ]);
+    }
+    
     public function update(Request $request) {
         // TODO: implement save functionality
     }

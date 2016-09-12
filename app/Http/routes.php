@@ -32,4 +32,5 @@ Route::post('/notecard', 'NotecardController@create');
 Route::put('/notecard', 'NotecardController@update');
 Route::get('/notecard/{subject_id}/create', 'NotecardController@showCreate');
 Route::get('/notecard/{id}/edit', 'NotecardController@edit');
+Route::get('/notecard/{id}/next', 'NotecardController@next');
 Route::get('/notecard/{id}', 'NotecardController@show');
