@@ -30,9 +30,6 @@
                         <tr>
                             <td class='table-text'>{{ $noteCard->title }}</td>
                             <td align='right'>
-                                <a href='{{ url('/notecard/' . $noteCard->id .'/edit') }}' class='btn btn-md btn-default'>
-                                    <i class="fa fa-pencil fa-fw"></i> Edit
-                                </a>
                                 <a href='{{ url('/notecard/' . $noteCard->id) }}' class='btn btn-md btn-default'>
                                     <i fa fa-btn fa-eye></i> View
                                 </a>

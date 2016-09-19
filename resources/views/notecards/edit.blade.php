@@ -13,16 +13,22 @@
             
             <div class='form-group'>
                 <label for='title'>Title: </label>
-                <div>
-                    <input class='form-control' type='text' name='title' id='title' value='{{ $noteCard->title }}' />
-                </div>
+                <input type='text' class='form-control' type='text' name='title' id='title' value='{{ $noteCard->title }}'/>
             </div>
             
             <div class='form-group'>
-                <label for='body'>Body: </label>
+                <label for='title'>Question: </label>
+                <textarea class='form-control' name='question' id='question' rows='7' value='{{ $noteCard->question }}'>
+                {{ $noteCard->question }}
+                </textarea>
+            </div>
+            
+            <div class='form-group'>
+                <label for='answer'>Answer: </label>
                 <div>
-                    <textarea class='form-control' name='body' rows='5' id='body' 
-                              value='{{ $noteCard->body }}'>{{ $noteCard->body }}</textarea>
+                    <textarea class='form-control' name='answer' rows='4' id='answer'>
+                        {{ $noteCard->answer }}
+                    </textarea>
                 </div>
             </div>
             

@@ -11,7 +11,7 @@ class Notecard extends Model
      * 
      * @var array
      */
-    protected $fillable = ['title','body','difficulty'];
+    protected $fillable = ['title','question', 'answer', 'difficulty'];
     
     /**
      * get the user that owns the task

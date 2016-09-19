@@ -41,7 +41,8 @@ class NotecardController extends Controller
     public function create(Request $request) {
         $noteCard = new Notecard();
         $noteCard->title = $request->title;
-        $noteCard->body = $request->body;
+        $noteCard->question = $request->question;
+        $noteCard->answer = $request->answer;
         $noteCard->subject_id = $request->subject_id;
         $noteCard->user_id = $request->user()->id;
         $noteCard->save();
@@ -89,5 +90,18 @@ class NotecardController extends Controller
     
     public function update(Request $request) {
         // TODO: implement save functionality
+        $noteCard = Notecard::find($request->id);
+        $noteCard->title = $request->title;
+        $noteCard->question = $request->question;
+        $noteCard->answer = $request->answer;
+        $noteCard->subject_id = $request->subject_id;
+        $noteCard->user_id = $request->user()->id;
+        $noteCard->save();
+        
+        // return redirect('/subject/'. $request->subject_id .'/notecards');
+         return view('notecards.show', [
+            'noteCard' => $noteCard,
+            'subject' => Subject::find($noteCard->subject_id)
+        ]);
     }
 }
