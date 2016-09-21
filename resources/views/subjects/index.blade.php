@@ -14,7 +14,7 @@
         <div class='panel panel-default'>
             <div class='panel-heading'>My Subjects</div>
             <div class='panel-body'>
-                
+                <h2>Something that should be removed</h2>
                 <table class='table table-striped'>
                     <thead>
                         <tr>
